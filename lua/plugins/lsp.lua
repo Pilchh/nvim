@@ -17,9 +17,9 @@ return {
 		  vim.lsp.set_log_level("error")
 		  vim.diagnostic.config({
 				underline = true,
-				severity_sort = true,
 				virtual_text = true,
-				signs = false
+				severity_sort = true,
+				signs = false,
 		  })
 	 end,
 	 config = function ()

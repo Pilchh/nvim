@@ -61,9 +61,6 @@ return {
 					 }
 				}
 		  },
-		  ghost_text = {
-				enabled = true
-		  },
 		  trigger = {
 				show_on_trigger_character = true
 		  }

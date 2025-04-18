@@ -12,8 +12,8 @@ vim.keymap.set('n', '<C-f>', tree_api.tree.toggle)
 
 -- Telescope Keymaps
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>fa', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>ff', builtin.git_files, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
 
@@ -32,4 +32,6 @@ vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
 
 -- LSP Keymaps
 vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "<leader>gr", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>ca", '<cmd>FzfLua lsp_code_actions<CR>')
 vim.keymap.set("n", "<leader>gh", function () vim.lsp.buf.hover({ border = 'rounded' }) end)
