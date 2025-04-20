@@ -1,6 +1,11 @@
 -- General keymaps
 vim.keymap.set('n', '<leader>w', '<cmd>:w!<cr>')
 vim.keymap.set('n', '<leader>q', '<cmd>:q<cr>')
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true })
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true })
+vim.keymap.set('n', 'n', 'nzzzv', { noremap = true })
+vim.keymap.set('n', 'N', 'Nzzzv', { noremap = true })
+vim.keymap.set('n', '<esc>', ':noh <CR>', { noremap = true, silent = true })
 
 -- Window keymaps
 vim.keymap.set('n', '<leader>sh', '<cmd>split<cr>')
