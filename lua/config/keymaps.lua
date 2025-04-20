@@ -3,8 +3,8 @@ vim.keymap.set('n', '<leader>w', '<cmd>:w!<cr>')
 vim.keymap.set('n', '<leader>q', '<cmd>:q<cr>')
 
 -- Window keymaps
-vim.keymap.set('n', '<C-s>', '<cmd>split<cr>')
-vim.keymap.set('n', '<C-v>', '<cmd>vsplit<cr>')
+vim.keymap.set('n', '<leader>sh', '<cmd>split<cr>')
+vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<cr>')
 vim.keymap.set('n', '<leader>h', '<cmd>wincmd h<cr>')
 vim.keymap.set('n', '<leader>j', '<cmd>wincmd j<cr>')
 vim.keymap.set('n', '<leader>k', '<cmd>wincmd k<cr>')
