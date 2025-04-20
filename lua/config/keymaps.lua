@@ -14,6 +14,9 @@ vim.keymap.set('n', '<leader>l', '<cmd>wincmd l<cr>')
 local tree_api = require('nvim-tree.api')
 vim.keymap.set('n', '<C-f>', tree_api.tree.toggle)
 
+-- Undo Tree Keymaps
+vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
+
 -- Telescope Keymaps
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })
