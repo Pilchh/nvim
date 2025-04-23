@@ -6,7 +6,8 @@ return {
 			auto_install = true,
 			highlight = {
 				enable = true
-			}
+			},
+			prefer_git = true
 		})
 	end
 }

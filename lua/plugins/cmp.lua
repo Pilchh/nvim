@@ -20,6 +20,7 @@ return {
 				}
 		  },
 		  menu = {
+				scrollbar = false,
 				winblend = 0,
 				border = "rounded",
 				winhighlight = "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder,CursorLine:BlinkCmpDocCursorLine,Search:None",
