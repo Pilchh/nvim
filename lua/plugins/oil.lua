@@ -11,7 +11,7 @@ return {
   config = function ()
 		require("oil").setup({
 			 float = {
-				  padding = 4,
+				  padding = 2,
 				  border = "rounded",
 				  win_options = {
 						winblend = 0

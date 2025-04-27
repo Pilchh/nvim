@@ -23,9 +23,19 @@ vim.keymap.set('n', '<leader>l', '<cmd>wincmd l<cr>')
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 -- Telescope Keymaps
+local utils = require("telescope.utils")
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>FF', builtin.find_files, { desc = 'Telescope find files' })
-vim.keymap.set('n', '<leader>ff', builtin.git_files, { desc = 'Telescope find files' })
+
+local project_files = function ()
+	 local _, ret, _ = utils.get_os_command_output({"git", "rev-parse", '--is-inside-work-tree'})
+	 if ret == 0 then
+		  builtin.git_files()
+	 else
+		  builtin.find_files()
+	 end
+end
+
+vim.keymap.set('n', '<leader>ff', project_files, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Telescope buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Telescope help tags' })
@@ -44,10 +54,11 @@ vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
 
 -- LSP Keymaps
-vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
-vim.keymap.set("n", "<leader>gr", vim.lsp.buf.rename)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>ca", '<cmd>FzfLua lsp_code_actions<CR>')
-vim.keymap.set("n", "<leader>gh", function () vim.lsp.buf.hover({ border = 'rounded' }) end)
+vim.keymap.set("n", "<leader>lh", function () vim.lsp.buf.hover({ border = 'rounded' }) end)
 
 -- Oil Keymaps
 vim.keymap.set("n", "<C-f>", "<CMD>Oil --float<CR>")
